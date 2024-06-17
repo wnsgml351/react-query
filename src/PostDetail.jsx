@@ -7,7 +7,7 @@ export function PostDetail({ post }) {
   // const data = [];
 
   const { data, isError, error, isLoading } = useQuery({
-    queryKey: ["comments"],
+    queryKey: ["comments", post.id],
     queryFn: () => fetchComments(post.id),
     staleTime: 2000, // 2 seconds
   });
